@@ -25,7 +25,7 @@
     "sql"
   ],
   "author": "Christopher W. V. Hogue",
-  "license": "MPL2",
+  "license": "MPL-2.0",
   "dependencies": {
     "dashdash": "~1.6.0",
     "node-uuid": "~1.4.1",
