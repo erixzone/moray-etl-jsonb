@@ -1,0 +1,19 @@
+Analysis
+
+data directory ../customers
+move unwrapped.json to ../customers
+cd ../customers
+copy scripts there
+cp ../measure/* .
+run 
+json_summary.sh unwrapped.json
+cd fini
+cp ../json_partition.R .
+R
+run json_partition.R steps
+
+results in:
+s_table.txt, 
+m_table.txt, 
+r_table.txt
+

@@ -28,8 +28,10 @@ cat *.n_defined > col4
 cat *.n_undefined > col6
 cat *.bz2_bytes > col8
 paste -d "," col1 col2 col4 col6 col8 > table
-echo "name,unique,defined,undefined,bytes" > header
-cat header table | sed -e "s/${FILE}.//" -e "s/.n_unique//" > table.csv
+echo "name,U,D,M,B" > header.txt
+cat header.txt table | sed -e "s/${FILE}.//" -e "s/.n_unique//" > table.csv
 
 echo "Finished Table:"
 cat table.csv
+
+cat *_objects > object.txt 

@@ -1,0 +1,29 @@
+
+Measure first (/measure/notes.txt)
+
+with output hct.txt, lct.txt ....
+
+
+Edit template for transform
+
+cp customers_tojson.js cities_tojson.js
+nano cities_tojson.js
+./cities_tojson.js 
+ls
+cities_keys.json
+more cities_keys.json
+
+
+Then wrap
+
+cat jpCities.json | ../lib/wrap_values.js > jpCities_wrap.json
+
+then transform
+
+ cat jpCities_wrap.json | ../lib/moraydump_reorg.js -t ../lib/cities_keys.json -o cities_w
+ cat cities_w_r.json | sort -r | uniq > cities_w_r_U.json
+ cat cities_w_m.json | ../lib/json2pgtypes.js -o cities_w_m_types
+ cat cities_w_r_U.json | ../lib/json2pgtypes.js -o cities_w_r_types
+ cat cities_w_m.json | ../lib/json_tsv.js -i /Users/cwvhogue/source/moray-etl-jsonb/jpcities/cities_w_m_types.json  > cities_m.tsv
+ cat cities_w_r_U.json | ../lib/json_tsv.js -i /Users/cwvhogue/source/moray-etl-jsonb/jpcities/cities_w_r_types.json  > cities_r.tsv
+

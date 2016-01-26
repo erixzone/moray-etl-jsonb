@@ -37,26 +37,6 @@ a Postgres dump file split, and reload into Postgres 9.4.
 
 Note: Current writeup  here is **incomplete**.
 
-#MEASUREMENT phase:
-
-
-    # After running JSON power law mappers and reducers
-    # Commands will assemble a .csv table  
-    mkdir fini
-    cp wf_jobs_values.json.* fini
-    cd fini
-    ls *.n_unique > col1
-    cat *.n_unique > col2
-    cat *.n_defined > col4
-    cat *.n_undefined > col6
-    cat *.bz2_bytes > col8
-    paste -d "," col1 col2 col4 col6 col8 > table
-    echo "name,unique,defined,undefined,bytes" > head
-    cat head table | sed -e "s/wf_jobs_values.json.//" -e "s/.n_unique//" > table.csv
-
-
-
-
 
 
 # Development
